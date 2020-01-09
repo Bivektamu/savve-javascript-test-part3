@@ -11,6 +11,8 @@ const NavBar = props => {
           <NavLink to='/home' activeClassName='active'>
             <i class='fas fa-home'></i> Home
           </NavLink>
+        </li>
+        <li>
           <NavLink to='/topic' activeClassName='active'>
             TOPIC 1
           </NavLink>

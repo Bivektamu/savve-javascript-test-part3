@@ -9,7 +9,7 @@ function Landing() {
     <section id='landing-page'>
       <div className='wrapper'>
         <h1 className='uppercase'>lorem ipsum</h1>
-        <img src={logo} alt='logo-img' id='logo' />
+        <img src={logo} alt='logo-img' className='logo' />
         <NavLink to='/home'>
           <i class='fas fa-hand-point-right'></i>&nbsp;&nbsp;Click begin to get
           started
