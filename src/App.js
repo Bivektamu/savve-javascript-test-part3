@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.scss';
 
 import NavBar from './components/layout/NavBar';
-import Landing from './components/Landing';
-import Home from './components/Home';
-import Topic from './components/Topic';
-import Accordian from './components/Accordian';
+import Landing from './components/pages/Landing';
+import Home from './components/pages/Home';
+import Topic from './components/pages/Topic';
+import Accordian from './components/pages/Accordian';
 
 const App = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../img/logo.png';
-import globe from '../img/globe.png';
+import logo from '../../img/logo.png';
+import globe from '../../img/globe.png';
 
 import { NavLink } from 'react-router-dom';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from './layout/Banner';
+import Banner from '../layout/Banner';
 
 function Home() {
   const title = 'lorem ipsum';

@@ -139,11 +139,52 @@ section {
       line-height: 2.6rem;
       letter-spacing: 0.02em;
     }
+
+    button {
+      width: 234px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 26px;
+      color: $darkBlue;
+      background: $lightBg;
+      outline: none;
+      border: none;
+      margin-top: 4rem;
+      padding: 10px 0;
+      cursor: pointer;
+    }
   }
 
   &#home-page {
     background: url('./img/home-bg.jpg') center right no-repeat;
     background-size: cover;
+  }
+
+  &#accordian-page {
+    background: url('./img/accordian-bg.jpg') top right no-repeat;
+    background-size: cover;
+
+    .banner {
+      padding-right: 10rem;
+
+      width: 50rem;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.93) 76.12%, rgba(0, 0, 0, 0) 95.93%);
+
+      .logo {
+        display: none;
+      }
+    }
+  }
+
+  &#topic-page {
+    background: url('./img/topic-bg.jpg') top right no-repeat;
+    background-size: cover;
+
+    .logo {
+      width: 8.2rem;
+    }
   }
 
 }
