@@ -1,6 +1,6 @@
 # Savve JavaScript Test Part 3
 
-This project is a React JS / JavaSCript programming skills test for interviewing process organized by savve. Please
+This project is a React JS / JavaSCript programming skills test for interviewing process organized by savve.
 
 ## Installation
 
