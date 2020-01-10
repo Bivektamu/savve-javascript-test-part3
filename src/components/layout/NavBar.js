@@ -1,27 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { NavLink } from 'react-router-dom';
 
-const NavBar = props => {
+const NavBar = () => {
   return (
-    <nav id='nav-bar'>
-      <ul>
-        <li>
-          <NavLink to='/home' activeClassName='active'>
-            <i class='fas fa-home'></i> Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/topic' activeClassName='active'>
-            TOPIC 1
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <nav id='nav-bar'>
+        <ul>
+          <li>
+            <NavLink to='/home' activeClassName='active'>
+              <i class='fas fa-home'></i> Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/topic' activeClassName='active'>
+              TOPIC 1
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 };
-
-NavBar.propTypes = {};
 
 export default NavBar;

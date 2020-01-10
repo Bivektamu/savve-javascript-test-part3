@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Banner from '../layout/Banner';
 
-function Home() {
+const Home = () => {
+  useEffect(() => {
+    const navBar = document.getElementById('nav-bar');
+    navBar.style.display = 'block';
+  }, []);
+
   const title = 'lorem ipsum';
   const desc = [
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
@@ -11,9 +16,10 @@ function Home() {
 
   return (
     <section id='home-page'>
+      <div className='bg'></div>
       <Banner title={title} desc={desc} />
     </section>
   );
-}
+};
 
 export default Home;

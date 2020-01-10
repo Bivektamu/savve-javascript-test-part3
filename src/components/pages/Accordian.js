@@ -7,22 +7,21 @@ import { Redirect, Link } from 'react-router-dom';
 
 const Accordian = () => {
   useEffect(() => {
+    const navBar = document.getElementById('nav-bar');
+    navBar.style.display = 'none';
+
     const articleList = document.getElementsByTagName('article');
     if (articleList.length > 0) {
       articleList[0].classList.add('show-content');
 
       for (let i = 0; i < articleList.length; i++) {
         const parent = articleList[i];
-        console.log(parent.childNodes);
         const pTag = parent.lastChild;
         const hTag = parent.firstChild;
-
-        console.log(pTag.classList);
 
         if (parent.classList.contains('show-content')) {
           const sum = hTag.clientHeight + pTag.clientHeight + 20;
           parent.style.height = '' + sum + 'px';
-          // console.log(sum);
         } else {
           parent.style.height = '' + hTag.clientHeight + 'px';
         }
@@ -32,7 +31,7 @@ const Accordian = () => {
 
   const [accords, setAccords] = useContext(AccordContext);
 
-  if (!accords || accords.accord.length < 1) return <Redirect to='/' />;
+  if (!accords || accords.accord.length < 1) return <Redirect to='/topic' />;
 
   const title = 'Nulla imperdiet';
   const caption = 'Vestibulum dapibus hendrerit nibh ut ornare.';
@@ -42,6 +41,8 @@ const Accordian = () => {
 
   return (
     <section id='accordian-page'>
+      <div className='bg'></div>
+
       <Banner title={title} caption={caption} desc={desc} />
       <div className='accordian-wrapper'>
         {accords.accord.map((item, index) => (
@@ -52,6 +53,14 @@ const Accordian = () => {
             content={item.desc}
           />
         ))}
+      </div>
+      <div className='pre-next'>
+        <Link to='/topic' className='pre'>
+          back
+        </Link>
+        <Link to='/home' className='next'>
+          next
+        </Link>
       </div>
     </section>
   );

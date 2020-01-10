@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '../../img/logo.png';
 import globe from '../../img/globe.png';
 
 import { NavLink } from 'react-router-dom';
 
-function Landing() {
+const Landing = () => {
+  useEffect(() => {
+    const navBar = document.getElementById('nav-bar');
+    navBar.style.display = 'none';
+  }, []);
+
   return (
     <section id='landing-page'>
       <div className='wrapper'>
@@ -19,6 +24,6 @@ function Landing() {
       <img src={globe} alt='globe-img' id='globe' />
     </section>
   );
-}
+};
 
 export default Landing;

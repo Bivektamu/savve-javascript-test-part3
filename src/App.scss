@@ -1,5 +1,5 @@
 @import './styles/_fonts.scss';
-@import './styles/variables.scss';
+@import './styles/_variables.scss';
 @import './styles/_global.scss';
 
 #nav-bar {
@@ -9,7 +9,7 @@
   width: 100%;
   left: 0;
   bottom: 0;
-  background: linear-gradient(360deg, rgba(0, 0, 0, 0.93) 70%, rgba(18, 18, 18, 0) 100%);
+  @include linear-gradient(360deg, rgba(0, 0, 0, 0.93), 70%, rgba(18, 18, 18, 0), 100%);
 
   ul {
 
@@ -30,6 +30,7 @@
         color: $lightWhite;
         padding: 0 15px;
         position: relative;
+        transition: all 0.3s ease;
 
         &:after {
           content: '';
@@ -41,6 +42,7 @@
           background: #55C6D7;
           position: absolute;
           opacity: 0;
+          transition: all 0.3s ease;
         }
 
         &.active,
@@ -101,6 +103,31 @@ section {
       a {
         font-size: 2.2rem;
         letter-spacing: 1px;
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          width: 350px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          height: 2px;
+          transform: scaleX(0);
+          background: $lightBg;
+          transition: all 0.3s ease;
+        }
+
+        &:hover {
+          i {
+            color: $lightBg
+          }
+
+          &:after {
+            transform: none;
+          }
+        }
       }
 
     }
@@ -119,6 +146,7 @@ section {
     opacity: 0.95;
     padding: 7rem;
     overflow: auto;
+    z-index: 2;
 
     .logo {
       margin-bottom: 10vh;
@@ -156,17 +184,31 @@ section {
       margin-top: 4rem;
       padding: 10px 0;
       cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $lightBg;
+        background: $darkBlue;
+        border-radius: 20px;
+      }
     }
   }
 
-  &#home-page {
+  .bg {
     background: url('./img/home-bg.jpg') center right no-repeat;
     background-size: cover;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
   }
 
   &#topic-page {
-    background: url('./img/topic-bg.jpg') top right no-repeat;
-    background-size: cover;
+    .bg {
+      background: url('./img/topic-bg.jpg') top right no-repeat;
+    }
 
     .logo {
       width: 8.2rem;
@@ -174,13 +216,15 @@ section {
   }
 
   &#accordian-page {
-    background: url('./img/accordian-bg.jpg') top right no-repeat;
-    background-size: cover;
+    .bg {
+      background: url('./img/accordian-bg.jpg') top right no-repeat;
+    }
 
     .banner {
       padding-right: 12rem;
       width: 50rem;
-      background: linear-gradient(90deg, rgba(0, 0, 0, 0.93) 76.12%, rgba(0, 0, 0, 0) 95.93%);
+      @include linear-gradient(90deg, rgba(0, 0, 0, 0.93), 76.12%, rgba(0, 0, 0, 0), 95.93%);
+
 
       .logo {
         display: none;
@@ -193,12 +237,106 @@ section {
       }
     }
 
+    .pre-next {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+      display: block;
+
+      a {
+        display: block;
+        padding: 40px 20px 5px;
+        text-transform: uppercase;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        letter-spacing: 1px;
+        color: $black;
+        background: $lightWhite;
+        position: absolute;
+        transition: all 0.3s ease;
+        bottom: 0;
+        right: 0;
+
+        &:hover {
+          padding: 50px 30px 5px;
+          // transform: scale(1.1);
+          z-index: 2;
+
+          &:hover:before {
+            top: 20px
+          }
+
+          &:hover:after {
+            top: 29px
+          }
+
+
+        }
+
+
+        &.next {
+          background: $lightBg;
+
+          &:hover {
+            @include box-shadow(-6px, 0px, 8px, -4px, rgba(0, 0, 0, 1.29));
+
+          }
+
+        }
+
+        &:before,
+        &:after {
+          content: '';
+          transition: all 0.3s ease;
+          position: absolute;
+          right: 0;
+          top: 15px;
+          left: 0;
+          margin: auto;
+          width: 15px;
+          height: 3px;
+          background: $black;
+          transform: rotate(45deg);
+          display: block;
+          cursor: pointer;
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+          top: 24px;
+        }
+
+        &.pre {
+          right: 87px;
+
+          &:hover {
+            @include box-shadow(6px, 0px, 8px, -4px, rgba(0, 0, 0, 1.29));
+
+          }
+
+          &::before {
+            transform: rotate(-45deg);
+          }
+
+          &::after {
+            transform: rotate(45deg);
+          }
+        }
+
+
+      }
+    }
+
     .accordian-wrapper {
       display: block;
       padding: 7rem 3rem;
       width: calc(100% - 50rem);
-      max-width: 50%;
       margin: auto 0 auto auto;
+      overflow: hidden;
 
       article {
         width: 55.5rem;
@@ -215,7 +353,10 @@ section {
           color: $black;
           position: relative;
           z-index: 1;
-          @include box-shadow(0px, 10px, 5px, 0px, rgba(204, 204, 204, 0.4));
+
+          &:hover {
+            @include box-shadow(0px, 10px, 5px, 0px, rgba(204, 204, 204, 0.4));
+          }
 
           &:before,
           &:after {
@@ -230,6 +371,7 @@ section {
             background: $black;
             transform: rotate(45deg);
             cursor: pointer;
+            transition: all 0.3s ease;
           }
 
           &:after {
@@ -250,11 +392,16 @@ section {
           margin: 0;
           width: 100%;
           transition: all 0.3s ease;
+          z-index: 3;
         }
 
         &.show-content {
-          h3:before {
-            transform: rotate(-45deg)
+          h3 {
+            @include box-shadow(0px, 10px, 5px, 0px, rgba(204, 204, 204, 0.4));
+
+            &:before {
+              transform: rotate(-45deg)
+            }
           }
 
           h3:after {
@@ -268,9 +415,16 @@ section {
         }
 
       }
+
+
+
+
     }
   }
 
 
 
 }
+
+
+@import './styles/_responsive.scss';

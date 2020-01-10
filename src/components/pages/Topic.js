@@ -33,7 +33,9 @@ const Topic = () => {
   const [accords, setAccords] = useContext(AccordContext);
 
   useEffect(() => {
-    console.log(topicAccords.accord);
+    const navBar = document.getElementById('nav-bar');
+    navBar.style.display = 'block';
+
     setAccords({
       accord: topicAccords.accord
     });
@@ -50,6 +52,7 @@ const Topic = () => {
 
   return (
     <section id='topic-page'>
+      <div className='bg'></div>
       <Banner title={title} beginButton={beginButton} />
     </section>
   );

@@ -1,0 +1,140 @@
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 8px;
+
+        #nav-bar {
+            bottom: auto;
+            top: 0;
+            @include linear-gradient(180deg, rgba(0, 0, 0, 0.93), 70%, rgba(18, 18, 18, 0), 100%);
+            padding: 20px 40px;
+
+            ul {
+                justify-content: space-between;
+                padding: 0;
+
+                li {
+                    margin: 0;
+                }
+            }
+        }
+
+
+
+        section#landing-page {
+            height: 100vh;
+
+            .wrapper {
+                justify-content: space-around;
+                width: 100%;
+
+                .logo {
+                    width: 250px;
+                }
+
+                a {
+                    align-self: baseline;
+                }
+            }
+        }
+
+        section {
+            // min-height: initial;
+            background: $mainbg;
+
+            .bg {
+                width: 100%;
+                position: relative;
+                height: 650px;
+                background-size: cover !important;
+            }
+
+            .banner {
+                position: relative;
+                width: 100% !important;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        #home-page .banner .logo {
+            width: 300px;
+        }
+
+        section#accordian-page .accordian-wrapper {
+            width: 100%;
+            padding-bottom: 80px;
+
+            article {
+                width: 100%;
+            }
+        }
+
+        section#topic-page .logo {
+            width: 100px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 760px) {
+    html {
+        font-size: 7px;
+
+        section#landing-page .wrapper .logo {
+            width: 200px;
+        }
+
+        section .banner {
+            padding: 40px 30px;
+        }
+
+
+        #home-page .banner .logo {
+            width: 200px;
+        }
+
+        section .bg {
+            height: 350px;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 760px) and (orientation: portrait) {
+    html {
+        section#landing-page .wrapper {
+            justify-content: center;
+            align-items: baseline;
+
+            a {
+                margin-top: 20px;
+            }
+
+            .logo {
+                position: absolute;
+                top: 0;
+                margin: 40px 0;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 760px) and (orientation: landscape) {
+    html {
+        section#landing-page .wrapper {
+
+            align-items: flex-start;
+            justify-content: space-between;
+
+            .logo {
+                margin: 0;
+            }
+        }
+
+        section .bg {
+            height: calc(100vh - 80px);
+        }
+    }
+}

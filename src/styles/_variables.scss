@@ -11,3 +11,13 @@ $lightWhite: #f2f2f2;
     -moz-box-shadow: $h-offset $v-offset $blur $spread $color;
     box-shadow: $h-offset $v-offset $blur $spread $color;
 }
+
+@mixin linear-gradient ($angle,
+    $color1,
+    $percent1,
+    $color2,
+    $percent2) {
+
+    background: linear-gradient($angle, $color1 $percent1, $color2 $percent2);
+
+}
