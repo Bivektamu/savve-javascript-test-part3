@@ -1,6 +1,6 @@
 # Savve JavaScript Test Part 3
 
-This project is a React JS / JavaSCript programming skills test for interviewing process organized by savve.
+This project is a React JS / JavaSCript programming skills test for interviewing process organized by savve. Thank you for your time in reviewing these code and organizing the test.
 
 ## Installation
 
@@ -12,7 +12,7 @@ In the project directory, you can run:
 
 ### `npm install`
 
-installs all dependencies required for project.
+Installs all dependencies required for project.
 
 ### `npm start`
 
