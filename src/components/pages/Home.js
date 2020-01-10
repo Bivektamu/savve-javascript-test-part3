@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import Banner from '../layout/Banner';
 
 const Home = () => {
+  //Display nav bar if on Home page
   useEffect(() => {
     const navBar = document.getElementById('nav-bar');
     navBar.style.display = 'block';
   }, []);
 
+  //Contents for banner
   const title = 'lorem ipsum';
   const desc = [
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit',

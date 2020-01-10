@@ -12,7 +12,10 @@ function Banner({ title, desc, caption, beginButton }) {
       </Link>
       <h1 className='banner-title'>{title}</h1>
 
+      {/* Check if caption exists */}
       <span>{caption && caption}</span>
+
+      {/* Check if description exists. If exists then loop and show description */}
       {(desc && desc.length) > 0 && (
         <Fragment>
           {desc.map((item, index) => (
@@ -20,7 +23,6 @@ function Banner({ title, desc, caption, beginButton }) {
           ))}
         </Fragment>
       )}
-
       {beginButton && beginButton}
     </div>
   );

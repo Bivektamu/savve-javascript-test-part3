@@ -5,6 +5,7 @@ import globe from '../../img/globe.png';
 import { NavLink } from 'react-router-dom';
 
 const Landing = () => {
+  //hide nav bar if on landing page
   useEffect(() => {
     const navBar = document.getElementById('nav-bar');
     navBar.style.display = 'none';

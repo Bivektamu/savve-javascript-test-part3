@@ -33,9 +33,11 @@ const Topic = () => {
   const [accords, setAccords] = useContext(AccordContext);
 
   useEffect(() => {
+    //Display nav bar if on Topic page
     const navBar = document.getElementById('nav-bar');
     navBar.style.display = 'block';
 
+    //Set accord provider with topic accordians
     setAccords({
       accord: topicAccords.accord
     });
