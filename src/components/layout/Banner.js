@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import logo from '../../img/logo.png';
 import TextItem from './TextItem';
 
-function Banner({ title, desc, beginButton }) {
+function Banner({ title, desc, caption, beginButton }) {
   return (
     <div className='banner'>
       <img src={logo} alt='logo-img' className='logo' />
       <h1 className='banner-title'>{title}</h1>
 
+      <span>{caption && caption}</span>
       {(desc && desc.length) > 0 && (
         <Fragment>
           {desc.map((item, index) => (
@@ -24,7 +25,9 @@ function Banner({ title, desc, beginButton }) {
 
 Banner.propTypes = {
   title: PropTypes.string.isRequired,
-  desc: PropTypes.array
+  desc: PropTypes.array,
+  caption: PropTypes.string,
+  beginButton: PropTypes.object
 };
 
 export default Banner;

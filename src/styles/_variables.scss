@@ -3,4 +3,11 @@ $secondBg: #172843;
 $lightBg: #55C6D7;
 $darkBlue: #0E1724;
 $white: #ffffff;
+$black: #000000;
 $lightWhite: #f2f2f2;
+
+@mixin box-shadow($h-offset, $v-offset, $blur, $spread, $color) {
+    -webkit-box-shadow: $h-offset $v-offset $blur $spread $color;
+    -moz-box-shadow: $h-offset $v-offset $blur $spread $color;
+    box-shadow: $h-offset $v-offset $blur $spread $color;
+}

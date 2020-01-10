@@ -18,6 +18,22 @@ html {
             margin: 0;
         }
 
+        h3 {
+            font-size: 1.8rem;
+            font-family: 'Montserrat';
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        p {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+            letter-spacing: 1px;
+        }
+
         a {
             text-decoration: none;
             color: $white;

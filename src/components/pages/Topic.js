@@ -50,7 +50,7 @@ const Topic = () => {
 
   return (
     <section id='topic-page'>
-      <Banner title={title} beginButton={beginButton} accords={topicAccords} />
+      <Banner title={title} beginButton={beginButton} />
     </section>
   );
 };
